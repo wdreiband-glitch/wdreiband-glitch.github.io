@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Will Dreiband | Real Estate</title>
+<meta name="description" content="Will Dreiband — Tulane University student in Real Estate and Political Science, focused on commercial real estate development and investments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2340; --navy-2:#1b3559; --gold:#b08d57; --ink:#1d232b;
+    --muted:#5b6573; --line:#e3e6ea; --bg:#ffffff; --bg-alt:#f6f7f9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px}
+  h1,h2,h3{font-family:"Libre Baskerville",Georgia,serif;color:var(--navy);font-weight:700;line-height:1.25}
+  a{color:var(--navy-2)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .brand{font-family:"Libre Baskerville",serif;font-size:1.05rem;color:#fff;text-decoration:none;letter-spacing:.02em}
+  nav ul{display:flex;gap:26px;list-style:none}
+  nav ul a{color:#d7deea;text-decoration:none;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase}
+  nav ul a:hover{color:var(--gold)}
+  .menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+
+  /* Hero */
+  header.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:80px 0 72px}
+  .hero .wrap{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center}
+  .headshot{width:260px;height:260px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 4px var(--gold),0 12px 30px rgba(0,0,0,.35)}
+  .hero h1{color:#fff;font-size:2.6rem;margin-bottom:8px}
+  .hero .title{color:var(--gold);font-size:1rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:18px}
+  .hero p.lead{color:#dbe2ec;font-size:1.08rem;max-width:560px;margin-bottom:26px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:3px;text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.04em;margin-right:10px;margin-bottom:10px}
+  .btn-gold{background:var(--gold);color:var(--navy)}
+  .btn-outline{border:1.5px solid #fff;color:#fff}
+  .btn:hover{opacity:.88}
+
+  /* Sections */
+  section{padding:72px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:var(--bg-alt)}
+  .eyebrow{color:var(--gold);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  section h2{font-size:1.9rem;margin-bottom:32px}
+  .bio p{max-width:760px;margin-bottom:16px;color:#333b46}
+
+  .item{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:22px 0;border-top:1px solid var(--line)}
+  .item:first-of-type{border-top:0}
+  .item .when{color:var(--muted);font-size:.9rem;font-weight:500}
+  .item h3{font-size:1.15rem;margin-bottom:2px}
+  .item .org{color:var(--navy-2);font-weight:600;margin-bottom:8px}
+  .item ul{padding-left:18px;color:#333b46}
+  .item li{margin-bottom:4px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:24px;border-radius:3px}
+  .card h3{font-size:1.1rem;margin-bottom:4px}
+  .card .meta{color:var(--muted);font-size:.85rem;margin-bottom:12px}
+  .card .stats{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+  .card .stat b{display:block;font-family:"Libre Baskerville",serif;color:var(--navy);font-size:1.15rem}
+  .card .stat span{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+  .skills h3{font-size:1rem;margin-bottom:12px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:20px;font-size:.85rem}
+
+  .contact{background:var(--navy);color:#fff;border:0}
+  .contact h2{color:#fff}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .contact-grid a{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:20px;border-radius:3px;color:#fff;text-decoration:none}
+  .contact-grid a:hover{border-color:var(--gold)}
+  .contact-grid small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;margin-bottom:4px}
+  footer{background:#0a1a30;color:#8c9bb0;text-align:center;padding:22px;font-size:.82rem}
+
+  @media (max-width:760px){
+    nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:8px 20px 16px}
+    nav ul.open{display:flex}
+    nav ul li a{display:block;padding:10px 0}
+    .menu-btn{display:block}
+    header.hero{padding:48px 0}
+    .hero .wrap{grid-template-columns:1fr;text-align:center;gap:28px}
+    .headshot{width:180px;height:180px;margin:0 auto}
+    .hero h1{font-size:2rem}
+    .hero p.lead{margin-left:auto;margin-right:auto}
+    .item{grid-template-columns:1fr;gap:4px}
+    section{padding:52px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Will Dreiband</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">&#9776;</button>
+    <ul id="navlinks" onclick="this.classList.remove('open')">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img class="headshot" src="headshot.jpg" alt="Headshot of Will Dreiband">
+    <div>
+      <div class="title">Real Estate &middot; Development &amp; Investments</div>
+      <h1>William Dreiband</h1>
+      <p class="lead">Tulane University student double-majoring in Real Estate and Political Science, focused on commercial real estate development, capital markets, and investment analysis.</p>
+      <a class="btn btn-gold" href="resume.pdf" target="_blank">Download R&eacute;sum&eacute;</a>
+      <a class="btn btn-outline" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="bio">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>Professional Biography</h2>
+    <p>I'm an undergraduate at Tulane University pursuing a double major in Real Estate and Political Science, originally from the Potomac, Maryland area. My interest sits where markets, policy, and the built environment meet &mdash; understanding not just how a deal pencils, but how zoning, local politics, and demographics shape what gets built and where.</p>
+    <p>Through Tulane's real estate development curriculum, I've underwritten full development deals from site selection through stabilized NOI, including a 266-unit build-to-rent community in Baldwin County, Alabama. Outside the classroom I'm active in the Tulane Real Estate Group, Wall Street Krewe, and the Tulane Algorithmic Trading Club, and I'm pursuing opportunities in development, investments, and debt &amp; equity in the Southeast and Texas.</p>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Education</div>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="when">Expected May 2028</div>
+      <div>
+        <h3>Tulane University</h3>
+        <div class="org">Bachelor of Science &middot; Double Major: Real Estate &amp; Political Science<br>Tulane School of Architecture &middot; Tulane School of Liberal Arts &middot; New Orleans, LA</div>
+        <ul>
+          <li><b>Real estate coursework:</b> Introduction to Real Estate, Real Estate Brokerage, Real Estate Finance, Fundamentals of Real Estate Development, Introduction to Architecture</li>
+          <li><b>Economics &amp; political science:</b> Micro/Macroeconomics, International Relations, Scopes and Methods of Political Science, American Government, Southern Politics</li>
+          <li><b>Campus involvement:</b> Tulane Real Estate Group, Wall Street Krewe, Tulane Algorithmic Trading Club</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Experience</div>
+    <h2>Leadership &amp; Community</h2>
+    <div class="item">
+      <div class="when">Sept 2020 &ndash; June 2024</div>
+      <div>
+        <h3>Second Lieutenant</h3>
+        <div class="org">St. John&rsquo;s Cadet Corps Leadership Program</div>
+        <ul>
+          <li>Mentored younger cadets in leadership, teamwork, and character development</li>
+          <li>Organized and led community service initiatives to strengthen local engagement</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">Sept 2022 &ndash; June 2024</div>
+      <div>
+        <h3>Fellow</h3>
+        <div class="org">Witherspoon Institute Fellows Program</div>
+        <ul>
+          <li>Selected for an invitation-only program studying philosophy, ethics, religion, and law</li>
+          <li>Engaged in discussions connecting classical thought to contemporary moral issues</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">2021 &ndash; Present</div>
+      <div>
+        <h3>Community Service</h3>
+        <div class="org">Potomac, MD</div>
+        <ul>
+          <li><b>Our Lady of Mercy</b> &mdash; Volunteer, Summers 2021&ndash;Present</li>
+          <li><b>Bryon House Assisted Living Facility</b> &mdash; Volunteer, Oct 2022&ndash;Aug 2023</li>
+          <li><b>VoteRiders</b> &mdash; Volunteer, May 2026</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Selected Work</div>
+    <h2>Projects &amp; Financial Models</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Live Oak Grove</h3>
+        <div class="meta">Build-to-Rent Development &middot; Bay Minette, AL</div>
+        <p>Full development underwriting and offering memorandum for a build-to-rent community in Baldwin County: site selection, zoning, rent comps, NOI build, and a 34-slide investment presentation.</p>
+        <div class="stats">
+          <div class="stat"><b>266</b><span>Units</span></div>
+          <div class="stat"><b>~$55.6M</b><span>Total Cost</span></div>
+          <div class="stat"><b>12.84%</b><span>Yield on Cost</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>165 Main Street</h3>
+        <div class="meta">Multifamily Redevelopment &middot; Waterville, ME</div>
+        <p>Redevelopment pro forma for a downtown multifamily conversion, with sensitivity analysis on rents, costs, and exit assumptions.</p>
+      </div>
+      <div class="card">
+        <h3>1700 Audubon Street</h3>
+        <div class="meta">Acquisition Model &middot; New Orleans, LA</div>
+        <p>Property-level cash flow model with debt sizing, amortization, and return analysis (IRR, cash-on-cash, DSCR).</p>
+      </div>
+      <div class="card">
+        <h3>Metairie Office Building</h3>
+        <div class="meta">50,000 SF Office &middot; Metairie, LA</div>
+        <p>Office acquisition model covering lease-up, operating expenses, financing, and levered/unlevered returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Capabilities</div>
+    <h2>Skills &amp; Interests</h2>
+    <div class="skills">
+      <div>
+        <h3>Financial Modeling</h3>
+        <div class="tags">
+          <span class="tag">Development Pro Formas</span><span class="tag">IRR / XIRR</span><span class="tag">DSCR &amp; Debt Sizing</span><span class="tag">Amortization Schedules</span><span class="tag">Sensitivity Tables</span><span class="tag">BTR Unit-Mix Models</span>
+        </div>
+      </div>
+      <div>
+        <h3>Real Estate</h3>
+        <div class="tags">
+          <span class="tag">Site Selection</span><span class="tag">Zoning Analysis</span><span class="tag">Rent Comps</span><span class="tag">Offering Memoranda</span><span class="tag">Investment Presentations</span>
+        </div>
+      </div>
+      <div>
+        <h3>Tools</h3>
+        <div class="tags">
+          <span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Adobe Illustrator</span><span class="tag">Canva</span><span class="tag">Claude</span><span class="tag">Claude Cowork (Certified)</span>
+        </div>
+      </div>
+      <div>
+        <h3>Interests</h3>
+        <div class="tags">
+          <span class="tag">Historic Redevelopment</span><span class="tag">Build-to-Rent</span><span class="tag">American &amp; Military History</span><span class="tag">Fishing &amp; the Outdoors</span><span class="tag">Jam Bands</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's Connect</h2>
+    <div class="contact-grid">
+      <a href="mailto:wdreiband@tulane.edu"><small>Email</small>wdreiband@tulane.edu</a>
+      <a href="https://www.linkedin.com/in/william-dreiband" target="_blank"><small>LinkedIn</small>linkedin.com/in/william-dreiband</a>
+      <a href="resume.pdf" target="_blank"><small>R&eacute;sum&eacute;</small>Download PDF</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; <span id="yr"></span> Will Dreiband &middot; New Orleans, LA</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
